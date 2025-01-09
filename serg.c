@@ -1,102 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
@@ -163,6 +64,7 @@ void	exec(int argc, char **argv, char **env, int prev_is_pipe, int *prev_fd)
 	pid_t	pid;
 	int		status;
 	int		i;
+	
 	if (argc <= 0)
 		return ;
 	next_is_pipe = is_pipe(argv);
@@ -205,7 +107,7 @@ void	exec(int argc, char **argv, char **env, int prev_is_pipe, int *prev_fd)
 	// recursive call
 	i = 0;
 	while (argv[i])
-	i++;
+		i++;
 	exec(argc - i - 1, argv + i + 1, env, next_is_pipe, next_fd);
 }
 int	main(int argc, char **argv, char **env)
